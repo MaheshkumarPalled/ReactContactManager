@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
 import { v4 } from 'uuid';
 import Header from './Header';
 import ContactList from './ContactList';
 import AddContact from './AddContact';
+import ContactDetails from "./ContactDetail";
 
 function App() {
 
@@ -30,10 +32,32 @@ function App() {
 
   return (
     <div className="ui container">
-      <Header />
-      <AddContact addContactHandler={addContactHandler} />
-      <ContactList contacts={contacts} getContactID = {removeContactHandler}/>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/add"
+            exact
+            render={(props) => (
+              <AddContact
+                {...props}
+                addContactHandler={addContactHandler} />
+            )}
+          />
+          <Route path="/"
+            exact
+            component={(props) => (
+              <ContactList {...props}
+                contacts={contacts}
+                getContactID={removeContactHandler} />
+            )}
+          />
 
+        <Route 
+        path ="/contact/:id" 
+        component = {ContactDetails} />
+        </Switch>
+
+      </Router>
     </div>
   );
 }
