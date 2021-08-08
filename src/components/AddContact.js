@@ -1,11 +1,16 @@
 import React from 'react';
 
+/* Class component to add the contact to a list.
+*/
 class AddContact extends React.Component {
+
+    // Default states on page load.
     state = {
         name: "",
         email: ""
     }
 
+    //function to add the entered name and email details in the add contacts page.
     add = (e) => {
         e.preventDefault();
         if (this.state.name === "" || this.state.email === ""){

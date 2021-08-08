@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import user from '../images/user.png';
 
+//Contact card component.
 const ContactCard = (props) => {
     const { id, name, email } = props.contact;
     return (
