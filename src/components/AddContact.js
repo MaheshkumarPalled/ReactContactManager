@@ -1,7 +1,6 @@
 import React from 'react';
 
-/* Class component to add the contact to a list.
-*/
+// Class component to add the contact to a list.
 class AddContact extends React.Component {
 
     // Default states on page load.
