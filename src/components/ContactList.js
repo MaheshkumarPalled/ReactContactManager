@@ -19,12 +19,12 @@ const ContactList = (props) => {
     //Render the contacts, pass the properties to Contact card component.
     const renderContactsCard = props.contacts.map((contact) => {
         return (
-            <ContactCard contact={contact} clickHandler={deleteContactHandler} />
+            <ContactCard contact={contact} clickHandler={deleteContactHandler}/>
         )
     })
 
     return (
-        <div class="main">
+        <div class="main" >
             <div class="container">
                 <h2> Contact list </h2>
                 <Link to="/add"> <button className="ui button blue right"> + Add Contact</button> </Link>    

@@ -5,10 +5,11 @@ import user from '../images/user.png';
 //Contact details component to display the selected component in card format.
 const ContactDetails = (props) => {
 
-    const {name, email} = props.location.state.contact;
+    //destructure the props.
+    const {id, name, email} = props.location.state.contact;
 
     return (
-        <div className="main">
+        <div className="main" key={id}>
             <div className="ui card centered">
                 <div className="image">
                     <img src={user} alt="user" />
